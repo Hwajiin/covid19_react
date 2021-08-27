@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Screen from "./components/screen";
+import covidData from "./service/api";
 
 function App() {
+  const initialState = {
+    loading: true,
+    covidData: null,
+    error: null,
+  };
+
+  const [data, setData] = useState(initialState);
+
+  const getCovidData = async () => {
+    const {
+      data: {
+        response: {
+          body: {
+            items: { item },
+          },
+        },
+      },
+    } = await covidData.getData();
+    setData({ loading: false, error: null, covidData: item });
+  };
+
+  useEffect(() => {
+    getCovidData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Screen data={data} />
     </div>
   );
 }
