@@ -10,7 +10,7 @@ const getToday = () => {
   return `${year}${month}${day}`;
 };
 
-const api = axios.create({
+const covidDateApi = axios.create({
   baseURL: "/openapi/service/rest/Covid19",
   params: {
     ServiceKey: process.env.REACT_APP_API_KEY,
@@ -22,7 +22,7 @@ const api = axios.create({
 });
 
 const covidData = {
-  getData: () => api.get("/getCovid19SidoInfStateJson"),
+  getData: () => covidDateApi.get("/getCovid19SidoInfStateJson"),
 };
 
 export default covidData;

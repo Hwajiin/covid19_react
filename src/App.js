@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Screen from "./components/screen";
+import Routes from "./components/routes";
 import covidData from "./service/api";
+import styled from "styled-components";
+
+const SApp = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
 
 function App() {
   const initialState = {
@@ -29,9 +35,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Screen data={data} />
-    </div>
+    <SApp className="App">
+      <Routes data={data} />
+    </SApp>
   );
 }
 
