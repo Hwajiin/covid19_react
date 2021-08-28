@@ -1,9 +1,10 @@
 import React from "react";
-import LocalPresenter from "./localPresenter";
+import styled from "styled-components";
+
+const Container = styled.div``;
 
 const LocalContainer = ({ data }) => {
-  console.log(data);
-  return <div></div>;
+  return data.loading ? <div>Loading...</div> : <Container></Container>;
 };
 
 export default LocalContainer;
