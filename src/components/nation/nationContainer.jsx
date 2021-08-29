@@ -14,6 +14,7 @@ const NationContainer = ({ data, data: { nationData, sortedData } }) => {
   ) : (
     <Container>
       <Info
+        name="국내현황"
         total={nationData.incDec}
         yesterday={getYesterday()}
         local={nationData.localOccCnt}
