@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import { getYesterday, makeTable } from "../../service/date";
+import { getYesterday } from "../../service/date";
 import Info from "../info";
 import Table from "../table";
 

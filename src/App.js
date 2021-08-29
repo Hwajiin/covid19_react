@@ -51,7 +51,7 @@ function App() {
       const mySidoData = item.find((data) => data.gubun === sidoName);
       const nationData = item.find((data) => data.gubun === "합계");
       const sortedData = item
-        .filter((data) => data.gubun !== "합계")
+        .filter((data) => data.gubun !== "합계" && data.gubun !== "검역")
         .sort((a, b) => (a.incDec > b.incDec ? -1 : 1));
 
       setData({
