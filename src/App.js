@@ -7,7 +7,10 @@ import Header from "./components/header/header";
 const SApp = styled.div`
   width: 100vw;
   height: 100vh;
-  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeeeee;
 `;
 
 function App() {
