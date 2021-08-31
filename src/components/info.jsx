@@ -40,9 +40,11 @@ const Info = ({ name, yesterday, total, local, overflow }) => {
       <Title>{name}</Title>
       <DataContainer>
         <Date>{yesterday}</Date>
-        <Data>신규확진자: {total}</Data>
+        <Data>신규확진자: {total.toLocaleString("ko-KR")}</Data>
       </DataContainer>
-      <Text>{`지역: ${local} 해외: ${overflow}`}</Text>
+      <Text>{`지역: ${local.toLocaleString(
+        "ko-KR"
+      )} 해외: ${overflow.toLocaleString("ko-KR")}`}</Text>
     </Container>
   );
 };
